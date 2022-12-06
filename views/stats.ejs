@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Statistics</title>
+</head>
+
+<body style="background-color: #a9b5c7 ;">
+    <div class="container">
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+              <span class="navbar-brand mb-0 h1" style="font-size: 2em;">teenyurl</span>
+            </div>
+          </nav>
+        <% var totClicks = 0
+        newUrls.forEach(newUrl=>{
+            totClicks += newUrl.clicks 
+        }) %> 
+        <h6 class="mt-3" style="font-size: 20px;">Total clicks: <%= totClicks %>  </h6>
+        <h6 class="mt-4" style="font-size: 25px;">teenyurl Stats </h6 >
+            <table class="table table-dark table-hover ">
+                <thead>
+                  <tr>
+                    <th scope="col">originalUrl</th>
+                    <th scope="col">newUrl</th>
+                    <th scope="col">Clicks</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% newUrls.forEach(newUrl => { %>
+                        <tr>
+                            <td><a href="<%= newUrl.original %> " target="_blank"><%= newUrl.original %> </a> </td>
+                            <td><a href="<%= newUrl.new %> " target="_blank"><%= newUrl.new %> </a> </td>
+                            <td><%= newUrl.clicks %> </td>
+                          </tr>  
+                    <% }); %>  
+                  
+                </tbody>
+              </table>
+    
+
+    </div>
+    
+</body>
+</html>
